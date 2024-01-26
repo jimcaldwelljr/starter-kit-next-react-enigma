@@ -16,7 +16,7 @@ In your Contento CMS starter kit site, in the Content panel:
 - Add new Footer Nav
 - Add new General Page
 
-Rename the .env.sample file to .env and copy and paste your unique ID's from Contento into the corresponding secrets. For more information about where to find each ID check out this guide: [https://www.contento.io/developer-resources/starter-kits/ids]
+Rename the .env.sample file to .env and copy and paste your unique ID's from Contento into the corresponding secrets. For more information about where to find each ID check out this guide: (https://www.contento.io/developer-resources/starter-kits/ids)
 
 Now run the development server:
 
