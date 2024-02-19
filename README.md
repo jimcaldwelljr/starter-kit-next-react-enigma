@@ -14,11 +14,11 @@ Then, rename the `.env.sample` file to `.env`.
 
 In your [Contento Account Settings](https://app.contento.io/account/api-keys) create a new API Key for this site, copy the value given to you in the dialog and then paste it into your `.env` file as the value of the `CONTENTO_API_KEY` key.
 
-In Contento, navigate to the Sites screen, and find your new site. Copy the ID of it from here, and paste it into your `.env` as the value of the `CONTENTO_SITE_ID` key.
+Now navigate to the Sites screen, and find your new site. Copy the ID of it from here, and paste it into your `.env` as the value of the `CONTENTO_SITE_ID` key.
 
-Now load up your new site by clicking on it in the Sites screen, and then navigate to the Content panel. Click into the Main Nav and copy the ID from the right hand side panel. Paste this into your `.env` as the value of the `SITE_MAIN_NAV_ID` key. Do the same for the Footer Nav, and paste it as the value of the `SITE_FOOTER_NAV_ID` key.
+Next, load up your new site by clicking on it in the Sites screen, and then navigate to the Content panel. Click into the Main Nav and copy the ID from the right hand side panel. Paste this into your `.env` as the value of the `SITE_MAIN_NAV_ID` key. Do the same for the Footer Nav, and paste it as the value of the `SITE_FOOTER_NAV_ID` key.
 
-Now you can run the development server:
+At this point, you can run the development server and get coding:
 
 ```bash
 npm run dev
