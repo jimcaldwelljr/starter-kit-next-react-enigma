@@ -9,16 +9,16 @@ First, install all the required dependencies:
 ```bash
 npm install
 ```
-In your Contento Account Settings create a new API Key for this site.
 
-In your Contento CMS starter kit site, in the Content panel:
-- Add new Main Nav
-- Add new Footer Nav
-- Add new General Page
+Then, rename the `.env.sample` file to `.env`.
 
-Rename the .env.sample file to .env and copy and paste your unique ID's from Contento into the corresponding secrets. For more information about where to find each ID check out this guide: (https://www.contento.io/developer-resources/starter-kits/ids)
+In your [Contento Account Settings](https://app.contento.io/account/api-keys) create a new API Key for this site, copy the value given to you in the dialog and then paste it into your `.env` file as the value of the `CONTENTO_API_KEY` key.
 
-Now run the development server:
+In Contento, navigate to the Sites screen, and find your new site. Copy the ID of it from here, and paste it into your `.env` as the value of the `CONTENTO_SITE_ID` key.
+
+Now load up your new site by clicking on it in the Sites screen, and then navigate to the Content panel. Click into the Main Nav and copy the ID from the right hand side panel. Paste this into your `.env` as the value of the `SITE_MAIN_NAV_ID` key. Do the same for the Footer Nav, and paste it as the value of the `SITE_FOOTER_NAV_ID` key.
+
+Now you can run the development server:
 
 ```bash
 npm run dev
@@ -26,18 +26,27 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy this repo is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+
+## Visual Preview
+
+Once you have your site deployed, you can set up [Visual Preview](https://www.contento.io/docs/sdk/next#visual-preview) in Contento to allow editors to see a preview of the page they are editing from within the Contento editor.
+
+This project is pre-configured to take full advantage of this feature, simply go to the [Site Settings > Preview](https://app.contento.io/settings/preview) page, switch it on and fill out the domain name. Then copy the value of the auto-generated secret and add it into your `.env` as the value of the `CONTENTO_PREVIEW_SECRET` key.
+
+Note that the preview tool won’t work with your local version of the site, it must be accessible on the public internet.
+
+
+## Learn More
+
+To learn more about the tools we’ve used in this repo, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - the React framework we use to produce a static site.
+- [Tailwind CSS Documentation(https://tailwindcss.com) - the CSS framework we use.
+- [Vercel](https://vercel.com) - a simple way to deploy a Next.js site.
