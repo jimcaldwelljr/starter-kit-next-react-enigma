@@ -1,6 +1,7 @@
-## Welcome to the Contento Next / React Starter Kit
+## Welcome to the Minimal Starter Kit for Contento
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a minimal starter kit that has a page builder template, header and footer navs and a basic collection of composable content blocks. It’s designed to get you started using Contento, and is built with a familiar and popular tech stack ([Next.js](https://nextjs.org) & [Tailwind CSS](https://tailwindcss.com)).
+
 
 ## Getting Started
 
