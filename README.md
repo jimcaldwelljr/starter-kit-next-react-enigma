@@ -48,5 +48,5 @@ Note that the preview tool won’t work with your local version of the site, it 
 To learn more about the tools we’ve used in this repo, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - the React framework we use to produce a static site.
-- [Tailwind CSS Documentation(https://tailwindcss.com) - the CSS framework we use.
+- [Tailwind CSS Documentation](https://tailwindcss.com) - the CSS framework we use.
 - [Vercel](https://vercel.com) - a simple way to deploy a Next.js site.
