@@ -20,9 +20,15 @@ export default async function RootLayout({
   const mainNavId = process.env.SITE_MAIN_NAV_ID ?? false;
   const footerNavId = process.env.SITE_FOOTER_NAV_ID ?? false;
 
-  if (!mainNavId || !footerNavId) {
+  if (!mainNavId) {
     throw new Error(
-      "No mainNavId or footerNavId found, please ensure you have created a mainNav and footerNav entry in Contento CMS and copy their id's to your .env file"
+      "No main nav found. Please ensure you have created one in Contento and copied the ID to your .env file."
+    );
+  }
+
+  if (!footerNavId) {
+    throw new Error(
+        "No footer nav found. Please ensure you have created one in Contento and copied the ID to your .env file."
     );
   }
 
