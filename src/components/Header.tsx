@@ -89,7 +89,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
           </div>
           <Disclosure.Panel className="md:hidden absolute bg-zinc-100 w-full">
             {/* Mobile Nav */}
-            <div className="space-y-4 px-4 sm:px-6 pb-6 pt-2 sm:px-3">
+            <div className="space-y-4 px-4 pb-6 pt-2 sm:px-3">
               {mainNav.fields.nav_links.blocks.map((item: BlockData) => {
                 if (item.fields.button.is_on) {
                   // This is a toggle in the navLink block in the CMS - it turns the link into a button
