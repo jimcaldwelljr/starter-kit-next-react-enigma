@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/contento"
+import { createClient } from '@/lib/contento'
 import { enableDraftAndRedirect } from '@gocontento/next'
 
 export async function GET(request: Request) {
