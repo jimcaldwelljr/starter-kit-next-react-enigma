@@ -16,9 +16,6 @@ export default function BlockMatcher({ blocks }: { blocks: BlockData[] }) {
       case 'hero':
         return <Hero key={id + '-' + index} block={block} />
 
-      case 'three_column_grid':
-        return <ThreeColumnGrid key={id + '-' + index} block={block} />
-
       case 'long_text':
         return <LongText key={id + '-' + index} block={block} />
 
