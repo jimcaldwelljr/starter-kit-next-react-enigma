@@ -2,8 +2,8 @@ import './globals.css'
 import { createClient } from '@/lib/contento'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import notFound from './not-found'
 import { Inter } from 'next/font/google'
+import { notFound } from 'next/navigation'
 
 const InterFont = Inter({
   variable: '--font-inter',
