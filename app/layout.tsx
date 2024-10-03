@@ -2,12 +2,19 @@ import './globals.css'
 import { createClient } from '@/lib/contento'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Inter } from 'next/font/google'
+import { Space_Grotesk, Raleway } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
-const InterFont = Inter({
-  variable: '--font-inter',
-  weight: ['400', '700', '900'],
+const SpaceGroteskFont = Space_Grotesk({
+  variable: '--font-space-grotesk',
+  weight: ['400', '600'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+
+const RalewayFont = Raleway({
+  variable: '--font-raleway',
+  weight: ['400', '700'],
   style: ['normal'],
   subsets: ['latin'],
 })
@@ -47,10 +54,10 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${InterFont.variable} h-full antialiased`}
+      className={`${SpaceGroteskFont.variable} ${RalewayFont.variable} h-full font-sans antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex h-full">
+      <body className="flex h-full bg-slate-900">
         <div className="flex w-full flex-col">
           <Header mainNav={mainNav} />
           <main className="flex-auto">{children}</main>

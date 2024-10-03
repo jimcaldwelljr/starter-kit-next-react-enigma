@@ -1,7 +1,7 @@
 'use client'
 
 import { BlockData, ContentData } from '@gocontento/client'
-import ContentoLogo from '@/images/ContentoLogo'
+import EnigmaLogo from '@/images/EnigmaLogo'
 import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
@@ -12,9 +12,9 @@ function Logo() {
   return (
     <Link
       href="/"
-      className="inline-block w-[128px] hover:opacity-80 lg:-mt-2.5 lg:w-[180px]"
+      className="inline-block w-[128px] hover:opacity-80 lg:-mt-2.5 lg:w-[150px]"
     >
-      <ContentoLogo className="h-auto w-full" />
+      <EnigmaLogo className="h-auto w-full" />
     </Link>
   )
 }
@@ -23,18 +23,18 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
   const pathName = usePathname()
 
   return (
-    <Disclosure as="nav" className="bg-zinc-100">
+    <Disclosure as="nav" className="bg-slate-900">
       {({ open }) => (
         <>
           <div className="mx-auto px-4 sm:px-6 md:px-28">
-            <div className="flex h-20 items-center justify-between">
+            <div className="h-30 flex items-center justify-between">
               {/* Logo */}
               <div className="flex flex-shrink-0 items-center">
                 <Logo />
               </div>
               <div>
                 {/* Desktop Nav */}
-                <div className="hidden md:ml-6 md:flex md:items-center md:space-x-9">
+                <div className="hidden md:ml-6 md:flex md:items-center md:space-x-16">
                   {mainNav.fields.nav_links.blocks.map((item: BlockData) => {
                     if (item.fields.button.is_on) {
                       return (
@@ -42,7 +42,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
                           key={item.fields.link_text.text}
                           as={Link}
                           href={item.fields.link_url.text}
-                          className="my-9 inline-block bg-zinc-700 px-6 py-3 font-semibold text-white hover:opacity-80"
+                          className="my-9 inline-block rounded-md bg-indigo-500 px-9 py-3 text-white hover:bg-teal-200 hover:text-slate-900"
                           target={
                             item.fields.open_in_new_tab.is_on ? '_blank' : ''
                           }
@@ -58,8 +58,8 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
                           href={item.fields.link_url.text}
                           className={classNames(
                             pathName.startsWith(item.fields.link_url.text)
-                              ? 'text-teal-500'
-                              : 'text-zinc-600 hover:opacity-80',
+                              ? 'border-b border-b-teal-200 text-teal-200'
+                              : 'text-white hover:border-b hover:border-b-teal-200 hover:text-teal-200',
                             'text-md font-semibold',
                           )}
                           target={
