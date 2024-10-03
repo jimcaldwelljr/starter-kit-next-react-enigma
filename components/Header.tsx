@@ -59,7 +59,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
                           className={classNames(
                             pathName.startsWith(item.fields.link_url.text)
                               ? 'border-b border-b-teal-200 text-teal-200'
-                              : 'text-white hover:border-b hover:border-b-teal-200 hover:text-teal-200',
+                              : 'border-b border-b-transparent text-white hover:border-b hover:border-b-teal-200 hover:text-teal-200',
                             'text-md font-semibold',
                           )}
                           target={
