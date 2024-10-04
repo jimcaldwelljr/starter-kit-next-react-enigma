@@ -6,23 +6,21 @@ import { FaArrowCircleRight } from 'react-icons/fa'
 export default function ImageAndText({ block }: { block: BlockData }) {
   const image =
     block.fields.image.assets.length > 0 ? (
-      <div className="col-span-2">
-        <Image
-          src={block.fields.image.assets[0].asset.url}
-          alt={block.fields.image.assets[0].asset.description}
-          className="h-full w-full object-cover"
-          width={600}
-          height={600}
-        />
-      </div>
+      <Image
+        src={block.fields.image.assets[0].asset.url}
+        alt={block.fields.image.assets[0].asset.description}
+        className="h-full w-full object-cover"
+        width={600}
+        height={600}
+      />
     ) : null
   return (
     <div className="py-9">
-      <div className="grid items-center space-y-6 md:grid-cols-3 md:space-x-12">
+      <div className="flex flex-col items-center space-y-6 lg:grid lg:flex-none lg:grid-cols-3 lg:space-x-12">
         {block.fields.image_side.selected_option.value === 'left' && (
-          <>{image}</>
+          <div className="col-span-2 lg:-translate-x-[60px]">{image}</div>
         )}
-        <div className="prose col-span-1">
+        <div className="prose lg:col-span-1">
           <h2 className="font-header text-4xl font-semibold text-white md:text-5xl">
             {block.fields.title.text}
           </h2>
@@ -34,7 +32,7 @@ export default function ImageAndText({ block }: { block: BlockData }) {
             block.fields.button.blocks.map((button: BlockData) => {
               return (
                 <Link
-                  className="not-prose group mt-9 flex items-center gap-x-3 text-lg font-semibold text-white/80"
+                  className="not-prose group mt-12 flex items-center gap-x-3 text-lg font-semibold text-white/80"
                   target={button.fields.open_in_new_tab.is_on ? '_blank' : ''}
                   href={button.fields.button_url.text}
                 >
@@ -45,7 +43,9 @@ export default function ImageAndText({ block }: { block: BlockData }) {
             })}
         </div>
         {block.fields.image_side.selected_option.value === 'right' && (
-          <>{image}</>
+          <div className="order-first lg:order-none lg:col-span-2 lg:translate-x-[60px]">
+            {image}
+          </div>
         )}
       </div>
     </div>

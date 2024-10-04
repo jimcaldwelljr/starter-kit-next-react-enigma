@@ -19,7 +19,7 @@ export default function Text({ block }: { block: BlockData }) {
           block.fields.button.blocks.map((button: BlockData) => {
             return (
               <Link
-                className="not-prose group mx-auto mt-9 flex items-center gap-x-3 text-lg font-semibold text-white/80"
+                className="not-prose group mx-auto mt-12 flex items-center gap-x-3 text-lg font-semibold text-white/80"
                 target={button.fields.open_in_new_tab.is_on ? '_blank' : ''}
                 href={button.fields.button_url.text}
               >
