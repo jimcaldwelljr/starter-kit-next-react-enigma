@@ -8,16 +8,27 @@ export default function Footer({ footerNav }: { footerNav: ContentData }) {
       <div>
         <EnigmaIcon className="mb-7 h-10 w-10" />
         <p className="text-md mb-12 w-2/3 text-white/80">
-          The Next.js starter kit by{'  '}
+          The Next.js <span className="text-teal-200">Enigma</span> starter kit
+          by{'  '}
           <Link
             href="https://www.contento.io"
-            className="font-bold text-teal-200"
+            className="hover:text-teal-200 hover:underline"
           >
             Contento
           </Link>
         </p>
-        <p className="text-xs text-white/80">
-          &copy; {new Date().getFullYear()} Enigma.
+        <p className="flex flex-col gap-y-4 text-xs text-white/80 md:flex-row">
+          <span>
+            &copy; {new Date().getFullYear()}{' '}
+            <Link href="https://www.contento.io">Contento</Link>{' '}
+          </span>
+          <span className="hidden px-4 text-teal-200 md:block">|</span>
+          <span className="leading-snug">
+            Images Copyright (c) 2021{' '}
+            <Link href="https://www.creative-tim.com/learning-lab/react/overview/vision-ui-dashboard/">
+              Creative Tim
+            </Link>
+          </span>
         </p>
       </div>
       <FooterNav footerNav={footerNav} />

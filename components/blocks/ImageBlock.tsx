@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function ImageBlock({ block }: { block: BlockData }) {
   return block.fields.image.assets.length > 0 ? (
-    <div className="py-9 md:py-16">
+    <div className="mx-auto max-w-5xl py-9">
       <Image
         src={block.fields.image.assets[0].asset.url}
         alt={block.fields.image.assets[0].asset.description}
-        className="prose mx-auto h-full w-full object-cover"
-        width={176}
-        height={176}
+        className="h-full w-full object-cover"
+        width={1000}
+        height={1000}
       />
     </div>
   ) : null

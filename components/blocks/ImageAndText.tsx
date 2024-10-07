@@ -10,18 +10,18 @@ export default function ImageAndText({ block }: { block: BlockData }) {
         src={block.fields.image.assets[0].asset.url}
         alt={block.fields.image.assets[0].asset.description}
         className="h-full w-full object-cover"
-        width={600}
-        height={600}
+        width={1000}
+        height={1000}
       />
     ) : null
   return (
     <div className="py-9">
-      <div className="flex flex-col items-center space-y-6 lg:grid lg:flex-none lg:grid-cols-3 lg:space-x-12">
+      <div className="mx-auto flex flex-col items-center space-y-6 lg:grid lg:max-w-7xl lg:flex-none lg:grid-cols-5">
         {block.fields.image_side.selected_option.value === 'left' && (
-          <div className="col-span-2 lg:-translate-x-[60px]">{image}</div>
+          <div className="col-span-3 lg:-translate-x-[60px]">{image}</div>
         )}
-        <div className="prose lg:col-span-1">
-          <h2 className="font-header text-4xl font-semibold text-white md:text-5xl">
+        <div className="prose lg:col-span-2">
+          <h2 className="font-header text-4xl font-semibold text-white md:text-5xl/[1.1em]">
             {block.fields.title.text}
           </h2>
           <div
@@ -32,6 +32,7 @@ export default function ImageAndText({ block }: { block: BlockData }) {
             block.fields.button.blocks.map((button: BlockData) => {
               return (
                 <Link
+                  key={`button-${button.fields.button_url.text}`}
                   className="not-prose group mt-12 flex items-center gap-x-3 text-lg font-semibold text-white/80"
                   target={button.fields.open_in_new_tab.is_on ? '_blank' : ''}
                   href={button.fields.button_url.text}
@@ -43,7 +44,7 @@ export default function ImageAndText({ block }: { block: BlockData }) {
             })}
         </div>
         {block.fields.image_side.selected_option.value === 'right' && (
-          <div className="order-first lg:order-none lg:col-span-2 lg:translate-x-[60px]">
+          <div className="order-first lg:order-none lg:col-span-3 lg:translate-x-[60px]">
             {image}
           </div>
         )}

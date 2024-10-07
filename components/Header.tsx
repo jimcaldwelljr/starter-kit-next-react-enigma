@@ -100,9 +100,8 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
                 if (item.fields.button.is_on) {
                   // This is a toggle in the navLink block in the CMS - it turns the link into a button
                   return (
-                    <div className="pt-7">
+                    <div key={item.fields.link_text.text} className="pt-7">
                       <Disclosure.Button
-                        key={item.fields.link_text.text}
                         as={Link}
                         href={item.fields.link_url.text}
                         className="block max-w-max rounded-md bg-indigo-500 px-6 py-3 text-center font-semibold text-white hover:opacity-80"
