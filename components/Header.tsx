@@ -10,12 +10,13 @@ import { classNames } from '@/utils/ClassNames'
 
 function Logo() {
   return (
-    <Link
+    <Disclosure.Button
+      as={Link}
       href="/"
       className="inline-block w-[128px] hover:opacity-80 lg:-mt-2.5 lg:w-[150px]"
     >
       <EnigmaLogo className="h-auto w-full" />
-    </Link>
+    </Disclosure.Button>
   )
 }
 

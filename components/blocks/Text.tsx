@@ -12,7 +12,7 @@ export default function Text({ block }: { block: BlockData }) {
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: block.fields.text.text }}
-          className="prose prose-invert prose-headings:font-header"
+          className="prose prose-invert text-pretty prose-headings:font-header"
         />
         {block.fields.button.blocks &&
           block.fields.button.blocks.map((button: BlockData) => {

@@ -15,18 +15,18 @@ export default function ImageAndText({ block }: { block: BlockData }) {
       />
     ) : null
   return (
-    <div className="pb-9 md:py-9">
-      <div className="mx-auto flex flex-col items-center gap-y-6 lg:grid lg:max-w-7xl lg:flex-none lg:grid-cols-5">
+    <div className="pb-9 lg:py-9">
+      <div className="mx-auto flex flex-col gap-y-6 lg:grid lg:max-w-7xl lg:flex-none lg:grid-cols-5 lg:items-center">
         {block.fields.image_side.selected_option.value === 'left' && (
           <div className="col-span-3 lg:-translate-x-[60px]">{image}</div>
         )}
-        <div className="prose lg:col-span-2">
-          <h2 className="font-header text-4xl font-semibold text-white md:text-5xl/[1.1em]">
+        <div className="prose prose-invert lg:col-span-2">
+          <h2 className="text-pretty font-header font-semibold text-white md:text-4xl/[1.1em]">
             {block.fields.title.text}
           </h2>
           <div
             dangerouslySetInnerHTML={{ __html: block.fields.text.text }}
-            className="text-lg text-white/80"
+            className="text-pretty text-base text-white/80 md:text-lg"
           />
           {block.fields.button.blocks.length > 0 &&
             block.fields.button.blocks.map((button: BlockData) => {
