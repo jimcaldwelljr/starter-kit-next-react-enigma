@@ -7,22 +7,21 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 import { usePathname } from 'next/navigation'
 import { classNames } from '@/utils/ClassNames'
+import { useLockBodyScroll } from '@uidotdev/usehooks'
 
 function Logo() {
   return (
-    <Disclosure.Button
-      as={Link}
+    <Link
       href="/"
       className="inline-block w-[128px] hover:opacity-80 lg:-mt-2.5 lg:w-[150px]"
     >
       <EnigmaLogo className="h-auto w-full" />
-    </Disclosure.Button>
+    </Link>
   )
 }
 
 export default function Header({ mainNav }: { mainNav: ContentData }) {
   const pathName = usePathname()
-
   return (
     <Disclosure as="nav" className="bg-slate-900">
       {({ open }) => (
@@ -94,49 +93,60 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className="absolute h-[calc(100vh-5rem)] w-full border-b border-b-8 border-b-teal-200 bg-slate-900 md:hidden">
-            {/* Mobile Nav */}
-            <div className="flex flex-col items-center space-y-5 px-4 pb-6 pt-16 sm:px-3">
-              {mainNav.fields.nav_links.blocks.map((item: BlockData) => {
-                if (item.fields.button.is_on) {
-                  // This is a toggle in the navLink block in the CMS - it turns the link into a button
-                  return (
-                    <div key={item.fields.link_text.text} className="pt-7">
-                      <Disclosure.Button
-                        as={Link}
-                        href={item.fields.link_url.text}
-                        className="block max-w-max rounded-md bg-indigo-500 px-6 py-3 text-center font-semibold text-white hover:opacity-80"
-                        target={
-                          item.fields.open_in_new_tab.is_on ? '_blank' : ''
-                        }
-                      >
-                        {item.fields.link_text.text}
-                      </Disclosure.Button>
-                    </div>
-                  )
-                } else {
-                  return (
-                    <Disclosure.Button
-                      key={item.fields.link_text.text}
-                      as={Link}
-                      href={item.fields.link_url.text}
-                      className={classNames(
-                        pathName.startsWith(item.fields.link_url.text)
-                          ? 'text-teal-200'
-                          : 'text-white hover:text-teal-200',
-                        'text-md block font-semibold',
-                      )}
-                      target={item.fields.open_in_new_tab.is_on ? '_blank' : ''}
-                    >
-                      {item.fields.link_text.text}
-                    </Disclosure.Button>
-                  )
-                }
-              })}
-            </div>
-          </Disclosure.Panel>
+          <MobileNav mainNav={mainNav} pathName={pathName} />
         </>
       )}
     </Disclosure>
+  )
+}
+
+function MobileNav({
+  mainNav,
+  pathName,
+}: {
+  mainNav: ContentData
+  pathName: any
+}) {
+  useLockBodyScroll()
+  return (
+    <Disclosure.Panel className="absolute h-[calc(100vh-5rem)] w-full border-b border-b-8 border-b-teal-200 bg-slate-900 md:hidden">
+      {/* Mobile Nav */}
+      <div className="flex flex-col items-center space-y-5 px-4 pb-6 pt-16 sm:px-3">
+        {mainNav.fields.nav_links.blocks.map((item: BlockData) => {
+          if (item.fields.button.is_on) {
+            // This is a toggle in the navLink block in the CMS - it turns the link into a button
+            return (
+              <div key={item.fields.link_text.text} className="pt-7">
+                <Disclosure.Button
+                  as={Link}
+                  href={item.fields.link_url.text}
+                  className="block max-w-max rounded-md bg-indigo-500 px-6 py-3 text-center font-semibold text-white hover:opacity-80"
+                  target={item.fields.open_in_new_tab.is_on ? '_blank' : ''}
+                >
+                  {item.fields.link_text.text}
+                </Disclosure.Button>
+              </div>
+            )
+          } else {
+            return (
+              <Disclosure.Button
+                key={item.fields.link_text.text}
+                as={Link}
+                href={item.fields.link_url.text}
+                className={classNames(
+                  pathName.startsWith(item.fields.link_url.text)
+                    ? 'text-teal-200'
+                    : 'text-white hover:text-teal-200',
+                  'text-md block font-semibold',
+                )}
+                target={item.fields.open_in_new_tab.is_on ? '_blank' : ''}
+              >
+                {item.fields.link_text.text}
+              </Disclosure.Button>
+            )
+          }
+        })}
+      </div>
+    </Disclosure.Panel>
   )
 }
