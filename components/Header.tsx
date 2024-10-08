@@ -7,7 +7,6 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 import { usePathname } from 'next/navigation'
 import { classNames } from '@/utils/ClassNames'
-import { useLockBodyScroll } from '@uidotdev/usehooks'
 
 function Logo() {
   return (
@@ -107,7 +106,7 @@ function MobileNav({
   mainNav: ContentData
   pathName: any
 }) {
-  useLockBodyScroll()
+
   return (
     <Disclosure.Panel className="absolute h-[calc(100vh-5rem)] w-full border-b border-b-8 border-b-teal-200 bg-slate-900 md:hidden">
       {/* Mobile Nav */}
