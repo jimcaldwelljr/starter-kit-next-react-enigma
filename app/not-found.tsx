@@ -3,7 +3,7 @@ import { TbExclamationCircle } from 'react-icons/tb'
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex flex-col items-center justify-center px-4 py-9 sm:px-6 md:px-28 md:py-16">
+    <div className="mx-auto flex flex-col items-center justify-center px-4 py-9 sm:px-6 md:px-20 md:py-16">
       <div className="mb-9 flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500">
         <TbExclamationCircle className="h-6 w-6 text-white" />
       </div>

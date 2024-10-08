@@ -26,7 +26,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
     <Disclosure as="nav" className="bg-slate-900">
       {({ open }) => (
         <>
-          <div className="mx-auto px-4 sm:px-6 md:px-28">
+          <div className="mx-auto px-4 sm:px-6 md:px-20">
             <div className="flex h-20 items-center justify-between md:h-32">
               {/* Logo */}
               <div className="flex flex-shrink-0 items-center">

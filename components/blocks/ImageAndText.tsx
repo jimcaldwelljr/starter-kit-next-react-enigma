@@ -15,8 +15,8 @@ export default function ImageAndText({ block }: { block: BlockData }) {
       />
     ) : null
   return (
-    <div className="py-9">
-      <div className="mx-auto flex flex-col items-center space-y-6 lg:grid lg:max-w-7xl lg:flex-none lg:grid-cols-5">
+    <div className="pb-9 md:py-9">
+      <div className="mx-auto flex flex-col items-center gap-y-6 lg:grid lg:max-w-7xl lg:flex-none lg:grid-cols-5">
         {block.fields.image_side.selected_option.value === 'left' && (
           <div className="col-span-3 lg:-translate-x-[60px]">{image}</div>
         )}

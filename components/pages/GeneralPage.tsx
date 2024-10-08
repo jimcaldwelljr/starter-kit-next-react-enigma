@@ -13,7 +13,7 @@ export default function GeneralPage({
 
   return (
     <div>
-      <div className="mx-auto px-4 py-9 sm:px-6 md:px-28 md:py-16">
+      <div className="mx-auto px-4 py-9 sm:px-6 md:px-20 md:py-16">
         <BlockMatcher blocks={content.fields.content.blocks} />
       </div>
     </div>

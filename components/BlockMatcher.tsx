@@ -6,6 +6,7 @@ import Hero from './blocks/Hero'
 import Text from './blocks/Text'
 import ImageAndText from './blocks/ImageAndText'
 import ImageBlock from './blocks/ImageBlock'
+import Form from './blocks/Form'
 
 export default function BlockMatcher({ blocks }: { blocks: BlockData[] }) {
   const id = useId()
@@ -23,6 +24,9 @@ export default function BlockMatcher({ blocks }: { blocks: BlockData[] }) {
 
       case 'image':
         return <ImageBlock key={id + '-' + index} block={block} />
+
+      case 'form':
+        return <Form key={id + '-' + index} block={block} />
 
       default:
         return (
