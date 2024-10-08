@@ -73,7 +73,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
                 </div>
                 <div className="flex items-center md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="relative inline-flex items-center justify-center text-zinc-600">
+                  <Disclosure.Button className="relative inline-flex items-center justify-center">
                     <span className="absolute" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -106,7 +106,6 @@ function MobileNav({
   mainNav: ContentData
   pathName: any
 }) {
-
   return (
     <Disclosure.Panel className="absolute h-[calc(100vh-5rem)] w-full border-b border-b-8 border-b-teal-200 bg-slate-900 md:hidden">
       {/* Mobile Nav */}
