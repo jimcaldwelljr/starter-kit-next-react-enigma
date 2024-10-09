@@ -7,6 +7,7 @@ import Text from './blocks/Text'
 import ImageAndText from './blocks/ImageAndText'
 import ImageBlock from './blocks/ImageBlock'
 import Form from './blocks/Form'
+import ThreeColumnGrid from './blocks/ThreeColumnGrid'
 
 export default function BlockMatcher({ blocks }: { blocks: BlockData[] }) {
   const id = useId()
@@ -27,6 +28,9 @@ export default function BlockMatcher({ blocks }: { blocks: BlockData[] }) {
 
       case 'form':
         return <Form key={id + '-' + index} block={block} />
+
+      case 'three_column_grid':
+        return <ThreeColumnGrid key={id + '-' + index} block={block} />
 
       default:
         return (

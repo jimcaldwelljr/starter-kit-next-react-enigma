@@ -5,7 +5,7 @@ export default function ImageBlock({ block }: { block: BlockData }) {
   return (
     <>
       {block.fields.mob_image.assets ? (
-        <div className="mx-auto max-w-5xl py-9">
+        <div className="mx-auto max-w-5xl px-4 py-9">
           <Image
             asset={block.fields.mob_image.assets[0].asset}
             className="h-full w-full object-cover md:hidden"
@@ -18,7 +18,7 @@ export default function ImageBlock({ block }: { block: BlockData }) {
           />
         </div>
       ) : (
-        <div className="mx-auto max-w-5xl py-9">
+        <div className="mx-auto max-w-5xl px-4 py-9">
           <Image
             asset={block.fields.image.assets[0].asset}
             className="h-full w-full object-cover"

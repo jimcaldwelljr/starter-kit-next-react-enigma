@@ -6,7 +6,7 @@ import Image from '@/utils/Image'
 
 export default function Hero({ block }: { block: BlockData }) {
   return (
-    <div className="pb-9 md:pb-6 lg:pb-9">
+    <div className="px-4 pb-9 md:pb-6 lg:pb-9">
       <div className="mx-auto flex flex-col items-center gap-y-2 text-center">
         <div className="prose prose-invert max-w-7xl">
           {block.fields.subtitle.text && (
