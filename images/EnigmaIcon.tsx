@@ -21,8 +21,8 @@ export default function EnigmaIcon({ className }: { className?: string }) {
           y2="181.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6366F1" />
-          <stop offset="1" stop-color="#00D6B5" />
+          <stop stopColor="#6366F1" />
+          <stop offset="1" stopColor="#00D6B5" />
         </linearGradient>
       </defs>
     </svg>
