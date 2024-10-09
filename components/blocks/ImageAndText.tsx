@@ -1,5 +1,5 @@
 import { BlockData } from '@gocontento/client'
-import Image from 'next/image'
+import Image from '@/utils/Image'
 import Link from 'next/link'
 import { FaArrowCircleRight } from 'react-icons/fa'
 
@@ -7,11 +7,9 @@ export default function ImageAndText({ block }: { block: BlockData }) {
   const image =
     block.fields.image.assets.length > 0 ? (
       <Image
-        src={block.fields.image.assets[0].asset.url}
-        alt={block.fields.image.assets[0].asset.description}
+        asset={block.fields.image.assets[0].asset}
         className="h-full w-full object-cover"
-        width={1000}
-        height={1000}
+        apiParams="fit=crop&w=750&dpr=2"
       />
     ) : null
   return (

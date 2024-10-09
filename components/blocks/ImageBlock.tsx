@@ -1,5 +1,5 @@
 import { BlockData } from '@gocontento/client'
-import Image from 'next/image'
+import Image from '@/utils/Image'
 
 export default function ImageBlock({ block }: { block: BlockData }) {
   return (
@@ -7,28 +7,22 @@ export default function ImageBlock({ block }: { block: BlockData }) {
       {block.fields.mob_image.assets ? (
         <div className="mx-auto max-w-5xl py-9">
           <Image
-            src={block.fields.mob_image.assets[0].asset.url}
-            alt={block.fields.mob_image.assets[0].asset.description}
+            asset={block.fields.mob_image.assets[0].asset}
             className="h-full w-full object-cover md:hidden"
-            width={600}
-            height={600}
+            apiParams="fit=crop&w=650&dpr=2"
           />
           <Image
-            src={block.fields.image.assets[0].asset.url}
-            alt={block.fields.image.assets[0].asset.description}
+            asset={block.fields.image.assets[0].asset}
             className="hidden h-full w-full object-cover md:block"
-            width={1000}
-            height={1000}
+            apiParams="fit=crop&w=1200&dpr=2"
           />
         </div>
       ) : (
         <div className="mx-auto max-w-5xl py-9">
           <Image
-            src={block.fields.image.assets[0].asset.url}
-            alt={block.fields.image.assets[0].asset.description}
-            className="hidden h-full w-full object-cover md:block"
-            width={1000}
-            height={1000}
+            asset={block.fields.image.assets[0].asset}
+            className="h-full w-full object-cover"
+            apiParams="fit=crop&w=1200&dpr=2"
           />
         </div>
       )}

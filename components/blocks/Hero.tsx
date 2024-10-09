@@ -1,8 +1,8 @@
 import { BlockData } from '@gocontento/client'
-import Image from 'next/image'
 import Button from './Button'
 import Markdown from 'react-markdown'
 import { FaArrowCircleRight } from 'react-icons/fa'
+import Image from '@/utils/Image'
 
 export default function Hero({ block }: { block: BlockData }) {
   return (
@@ -32,13 +32,11 @@ export default function Hero({ block }: { block: BlockData }) {
             })}
         </div>
         {block.fields.image.assets.length > 0 && (
-          <div>
+          <div className="max-w-7xl">
             <Image
-              src={block.fields.image.assets[0].asset.url}
-              alt={block.fields.image.assets[0].asset.description}
+              asset={block.fields.image.assets[0].asset}
               className="h-full w-full object-cover"
-              width={750}
-              height={600}
+              apiParams="fit=crop&w=1200&dpr=2"
             />
           </div>
         )}
