@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function ThreeColumnGrid({ block }: { block: BlockData }) {
   return (
-    <div className="py-9 md:pt-16">
+    <div className="px-4 py-9 md:pt-16">
       <div className="mx-auto max-w-7xl">
         <div className="prose max-w-none gap-x-6 space-y-9 pt-6 md:gap-y-16 md:space-y-0 md:pt-16 lg:grid lg:grid-cols-3">
           {block.fields.content.blocks.map((card: BlockData) => (
