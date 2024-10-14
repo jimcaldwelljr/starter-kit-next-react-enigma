@@ -6,23 +6,11 @@ export default function ThreeColumnGrid({ block }: { block: BlockData }) {
   return (
     <div className="py-9 md:pt-16">
       <div className="mx-auto max-w-7xl">
-        <div className="prose max-w-none">
-          {block.fields.title.text && (
-            <h2 className="mb-5 text-center font-header text-4xl/[1.1em] font-semibold text-white">
-              {block.fields.title.text}
-            </h2>
-          )}
-          {block.fields.text.text && (
-            <p className="text-center text-base text-white lg:text-lg">
-              {block.fields.text.text}
-            </p>
-          )}
-        </div>
         <div className="prose max-w-none gap-x-6 space-y-9 pt-6 md:gap-y-16 md:space-y-0 md:pt-16 lg:grid lg:grid-cols-3">
           {block.fields.content.blocks.map((card: BlockData) => (
             <div
               key={card.fields.heading.text}
-              className="mx-auto flex max-w-sm flex-col bg-slate-900 p-4 md:max-w-2xl md:flex-grow md:py-6"
+              className="mx-auto flex max-w-sm flex-col bg-slate-900 py-4 md:max-w-2xl md:flex-grow md:p-6 lg:pl-0"
             >
               <div className="mb-5 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500">
                 <Icons
