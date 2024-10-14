@@ -77,7 +77,7 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-slate-900 px-4 sm:max-w-sm sm:px-6">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-slate-900 px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between">
             <Link
               href="/"
