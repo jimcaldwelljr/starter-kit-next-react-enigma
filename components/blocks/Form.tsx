@@ -5,7 +5,7 @@ export default function ContactForm({ block }: { block: BlockData }) {
   return (
     <div className="px-4 md:py-16">
       {/* FORM EXAMPLE - REPLACE WITH YOUR OWN FORM HANDLER */}
-      <form className="mx-auto max-w-5xl">
+      <form className="mx-auto max-w-3xl">
         <div className="flex flex-col gap-x-9 gap-x-9 gap-y-3 md:flex-row">
           <div className="w-full">
             <label

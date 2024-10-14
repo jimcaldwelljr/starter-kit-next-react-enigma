@@ -39,7 +39,7 @@ export default function ThreeColumnGrid({ block }: { block: BlockData }) {
               {card.fields.cta.blocks.length > 0 && (
                 <Link
                   href={card.fields.cta.blocks[0].fields.link_url.text}
-                  className="text-md not-prose mt-4 flex font-semibold text-white/80 hover:opacity-80 md:flex-grow md:items-end"
+                  className="text-md not-prose mt-4 flex font-semibold text-white/80 hover:text-teal-200 md:flex-grow md:items-end"
                   target={
                     card.fields.cta.blocks[0].fields.open_in_new_tab.is_on
                       ? '_blank'
