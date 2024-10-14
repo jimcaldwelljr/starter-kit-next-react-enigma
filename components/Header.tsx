@@ -101,9 +101,8 @@ export default function Header({ mainNav }: { mainNav: ContentData }) {
               {mainNav.fields.nav_links.blocks.map((item: BlockData) => {
                 if (item.fields.button.is_on) {
                   return (
-                    <div className="pt-7">
+                    <div key={item.fields.link_text.text} className="pt-7">
                       <Link
-                        key={item.fields.link_text.text}
                         href={item.fields.link_url.text}
                         onClick={() => setMobileMenuOpen(false)}
                         className="inline-block rounded-md bg-indigo-500 px-9 py-3 text-center text-white"
