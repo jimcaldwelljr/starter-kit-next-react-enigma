@@ -3,6 +3,7 @@ import { createClient } from '@/lib/contento'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Space_Grotesk, Raleway } from 'next/font/google'
+import AnnouncementBar from '@/components/blocks/AnnouncementBar'
 
 const SpaceGroteskFont = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -54,6 +55,10 @@ export default async function RootLayout({
       )
     })
 
+  const announcementBar = await createClient().getContentByType({
+    contentType: 'announcement_bar',
+  })
+
   return (
     <html
       lang="en"
@@ -62,6 +67,9 @@ export default async function RootLayout({
     >
       <body className="flex h-full bg-slate-900">
         <div className="flex w-full flex-col">
+          {announcementBar && (
+            <AnnouncementBar block={announcementBar.content[0]} />
+          )}
           <Header mainNav={mainNav} />
           <main className="flex-auto">{children}</main>
           <Footer footerNav={footerNav} />
